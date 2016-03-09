@@ -1,8 +1,9 @@
 class Complement
-  VERSION = 2
-  @complement_map = { 'G' => 'C', 'C' => 'G', 'T' => 'A', 'A' => 'U' }
+  VERSION = 3
+
+  MAPPING = { 'G' => 'C', 'C' => 'G', 'T' => 'A', 'A' => 'U' }
 
   def self.of_dna(dna)
-    dna.chars.map! { |c| @complement_map[c] or raise ArgumentError }.join("")
+    dna.chars.map! { |c| MAPPING[c] or raise ArgumentError, "Invalid character detected! (ACGTU are valid)" }.join("")
   end
 end
