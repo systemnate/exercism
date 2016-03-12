@@ -1,8 +1,8 @@
 class Grains
-  VERSION = 1
+  VERSION = 2
 
   def self.square(n)
-    2**n / 2
+    2**(n-1)
   end
 
   def self.total
