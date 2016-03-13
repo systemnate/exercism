@@ -1,0 +1,10 @@
+class FoodChain
+  def self.song
+    swallowed = ["fly", "spider", "bird", "cat", "dog", "goat", "cow", "horse"]
+    last = "I don't know why she swallowed the fly. Perhaps she'll die."
+    song_lyrics = ""
+    swallowed.each do |animal|
+      puts "I know an old
+    end
+  end
+end
