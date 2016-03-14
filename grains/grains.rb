@@ -1,5 +1,5 @@
 class Grains
-  VERSION = 2
+  VERSION = 3
 
   def self.square(n)
     2 ** ( n - 1 )
