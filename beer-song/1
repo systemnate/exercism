@@ -1,0 +1,27 @@
+class BeerSong
+  def verse(n)
+    beer_on_wall = beer_on_the_wall(n)
+    beer_left = beer_left_on_the_wall(n)
+    "#{beer_on_the_wall(n)}#{beer_left_on_the_wall(n)}"
+  end
+
+  def beer_on_the_wall(n)
+    if n > 1
+      bottles = n == 1 ? "bottle" : "bottles"
+      "#{n} #{bottles} of beer on the wall, #{n} #{bottles} of beer.\n"
+    else
+      "No more bottles of beer on the wall, no more bottles of beer.\n"
+    end
+  end
+
+  def beer_left_on_the_wall(n)
+    of_beer = "of beer on the wall.\n"
+    take_down = n-1 == 0 ? "it" : "one"
+    last_part = case n-1
+    when 1 then "#{n-1} bottle #{of_beer}"
+    when 0 then "no more bottles #{of_beer}"
+    else "#{n-1} bottles #{of_beer}"
+    end
+    "Take #{take_down} down and pass it around, #{last_part}"
+  end
+end
