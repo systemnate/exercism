@@ -368,6 +368,6 @@ Go to the store and buy some more, 99 bottles of beer on the wall.
   #
   # Define a constant named VERSION inside of BeerSong.
   def test_bookkeeping
-    assert_equal 1, BeerSong::VERSION
+    assert_equal 2, BeerSong::VERSION
   end
 end
