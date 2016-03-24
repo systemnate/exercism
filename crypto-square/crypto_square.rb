@@ -11,11 +11,7 @@ class Crypto
 
   def size
     sz = normalize_plaintext.size
-    if Math.sqrt(sz) == Math.sqrt(sz).floor
-      Math.sqrt(sz).to_i
-    else
-      Math.sqrt(sz).to_i + 1
-    end
+    Math.sqrt(sz).ceil
   end
 
   def plaintext_segments
@@ -23,13 +19,7 @@ class Crypto
   end
 
   def ciphertext
-    str = ""
-    size.times do |i|
-      plaintext_segments.each do |ps|
-        str << ps[i].to_s
-      end
-    end
-    str
+    normalize_ciphertext.gsub(' ', '')
   end
 
   def normalize_ciphertext
