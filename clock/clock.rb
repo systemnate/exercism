@@ -1,5 +1,5 @@
 class Clock
-  attr_accessor :hour, :minute
+  attr_reader :hour, :minute
 
   def initialize(hour, minute=0)
     @hour = hour
