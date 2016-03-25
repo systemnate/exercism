@@ -1,13 +1,8 @@
 class Acronym
-  VERSION = 1
+  VERSION = 2
 
   def self.abbreviate(given)
-    given.split.map do |w|
-      if w == w.upcase
-        w
-      else
-        w.split(/(?=[A-Z])/).join(" ").split("-")
-      end
-    end.flatten.join(" ").split.map { |s| s[0].capitalize }.join
+    # split on capital letter followed by lower, then on space or "-", then capitalize/take first letter
+    given.split(/(?=[A-Z][a-z])/).join(" ").split(/[\s\-]/).join(" ").split.map { |w| w[0].capitalize }.join
   end
 end

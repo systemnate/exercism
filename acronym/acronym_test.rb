@@ -32,6 +32,6 @@ class AcronymTest < Minitest::Test
   # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
   def test_version
-    assert_equal 1, Acronym::VERSION
+    assert_equal 2, Acronym::VERSION
   end
 end
