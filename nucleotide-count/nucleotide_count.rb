@@ -2,14 +2,14 @@ class Nucleotide
   attr_reader :dna
 
   def initialize(dna)
-    if dna.chars.collect { |c| ['A','T','G','C'].include?(c) }.include?(false)
-      raise ArgumentError, "valid characters are 'A','T','G','C', but #{dna} was provided"
-    else
-      @dna = dna
-    end
+    @dna = dna
   end
 
   def self.from_dna(dna)
+    if dna =~ /[^ATCG]/
+      raise ArgumentError, 
+        "valid characters are ATCG, but #{dna} was provided"
+    end
     new(dna)
   end
 
