@@ -14,12 +14,13 @@ class Nucleotide
   end
 
   def count(char)
-    dna.scan(/#{char}/).count
+    dna.count(char)
   end
 
   def histogram
-    hist = { 'A' => 0, 'T' => 0, 'C' => 0, 'G' => 0  }
-    dna.chars.collect { |c| hist[c] += 1 }
-    hist
+    { 
+      'A' => count('A'), 'T' => count('T'), 
+      'C' => count('C'), 'G' => count('G')  
+    }
   end
 end
