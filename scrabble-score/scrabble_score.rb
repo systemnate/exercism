@@ -18,8 +18,8 @@ class Scrabble
     word.to_s.scan(/\w/).map { |w| MAPPING[w] }.inject(0, :+)
   end
 
-	def initialize(word)
-		@word = word
+  def initialize(word)
+    @word = word
   end
 
 end
