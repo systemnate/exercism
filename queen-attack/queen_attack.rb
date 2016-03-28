@@ -5,7 +5,10 @@ class Queens
 
   def initialize(opts = {})
     @opts = DEFAULT.merge(opts)
-    raise ArgumentError if @opts[:white] == @opts[:black]
+    if @opts[:white] == @opts[:black]
+      raise ArgumentError, 
+        "white and black cannot start on same square!"
+    end
   end
 
   def white
