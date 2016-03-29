@@ -7,6 +7,6 @@ class Anagram
   end
 
   def match(words)
-    words.select { |w| word == w.downcase.chars.sort }.reject { |w| w.downcase == initial }
+    words.select { |w| word == w.downcase.chars.sort && w.downcase != initial }
   end
 end
